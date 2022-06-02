@@ -40,81 +40,106 @@ body {
 
 /* 공통 요소 */
 .wrap {
-    position: relative;         
+    position: relative;
     display: block;
 }
+
 .container {
     position: relative;
     display: block;
-    width: 1425px;
+    max-width: 1425px;
     margin: 0 auto;
 }
 
 
 
-.clearfix::after{
+.clearfix::after {
     content: '';
     position: relative;
     display: block;
     width: 100%;
     clear: both;
 }
+
 /* 상단 */
-.header{
+.header {
     position: fixed;
     display: block;
     width: 100%;
     z-index: 999;
+    background-color: rgba(253, 253, 253, 0.0);
+    transition: background-color 0.5s;
 }
-.header .container{
-    position: relative;
-    display: block;
-    height: 100px;
-}
-.header-active{
-    height: 200px;
-    background-color: #fff;
-    z-index: 999;
-}
-.logo{
+
+
+.header::before {
+    content: '';
     position: absolute;
+    left: 0;
+    top: 80px;
+    display: none;
+    width: 100%;
+    height: 60px;
+    background-color: #fff;
+}
+
+.header-active {
+    background-color: rgba(253, 253, 253, 1.0);
+}
+.header-active::before {
     display: block;
-    left: 0px;
+}
+
+
+.logo {
+    position: absolute;
+    left: 80px;
     top: 50%;
     transform: translateY(-50%);
+    display: block;
 }
-.logo img{
+
+.logo img {
     position: relative;
     display: block;
     width: 170px;
     height: 45px;
 }
-.nav{
+
+.header .container {
+    height: 80px;
+}
+
+.nav {
     position: absolute;
     left: 50%;
-    top: 10px;
     transform: translateX(-50%);
+    top: 0;
     display: block;
 }
-.gnb{
+
+.gnb {
     position: relative;
     display: block;
     font-size: 0;
     white-space: nowrap;
     letter-spacing: 0;
 }
-.gnb>li{
+
+.gnb>li {
     position: relative;
     display: inline-block;
     vertical-align: top;
-    margin-left: 20px;
+    margin-left: 50px;
 }
-.gnb>li>a:hover{
+
+.gnb>li>a:hover {
     position: relative;
     display: block;
     color: green;
 }
-.gnb>li>a{
+
+.gnb>li>a {
     position: relative;
     display: block;
     text-align: center;
@@ -125,75 +150,175 @@ body {
     color: #222;
     letter-spacing: 1px;
 }
-.gnb>li:last-child{
-    position: relative;
-    display: inline-block;
-    margin-left: 50px;
+
+.gnb>li:first-child {
+    margin-left: 0px;
 }
 
-.submenu{
-    position: relative;
-    width: 100%;
+.submenu {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 80px;
     display: none;
 }
-.submenu>li{
+
+.submenu>li {
     position: relative;
-    display: inline-block
+    display: inline-block;
+    margin-right: 20px;
+    height: 60px;
 }
-.submenu>li>a{
+
+.submenu>li>a {
     position: relative;
     display: block;
-    line-height: 20px;
-    text-align: center;
-    font-size: 20px;
+    font-size: 15px;   
+    line-height: 60px;
+    font-weight: 500;
+
+    color: #555;
+    transition: color .2s ease-in;
+    text-transform: uppercase;
 }
-.lang{
+.submenu>li>a:hover{
+    color: #1da876;
+}
+
+/* 분양정보 */
+.info {
     position: absolute;
+    left: 75%;
+    top: 18px;
+    display: block;
+    width: 110px;
+}
+.info > a {
+    position: relative;
     display: inline-block;
-    right: 0px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #222;
+    letter-spacing: 1px;
+
+    border: 1px solid #8c8c8c;
+    padding: 10px 17px;
+}
+
+.info-submenu {
+    position: relative;
+    /* left: 50%; */
+    transform: translateX(-25%);
+    margin-top: 19px;
+    display: block;
+    white-space: nowrap;
+}
+
+.info-submenu > li {
+    position: relative;
+    display: inline-block;
+}
+
+.info-submenu>li>a {
+    position: relative;
+    display: block;
+    font-size: 15px;   
+    line-height: 60px;
+    font-weight: 500;
+
+    color: #555;
+    transition: color .2s ease-in;
+    text-transform: uppercase;
+}
+.info-submenu>li>a:hover{
+    color: #1da876;
+}
+
+/* 언어정보 */
+.right-menu {
+    position: absolute;
+    right: 80px;
     top: 20px;
+    display: block;
 }
-.kr{
+.lang {
     position: relative;
-    background: url('../images/bg_gnb_select.png') no-repeat center;
+    display: block;
+}
+
+.kr {
+    position: relative;
+    display: inline-block;
     font-size: 16px;
     line-height: 40px;
     color: rgba(0, 0, 0, 0.6);
-    padding-right: 35px;
+    font-size: 16px;
+    line-height: 40px;
+    padding: 0px 30px 0 15px;
+    background: url('../images/bg_gnb_select.png') no-repeat;  
+    background-position: 70% 50%;
+    font-weight: 600; 
 }
-.family{
+
+.family {
     position: relative;
+    display: inline-block;
     font-size: 16px;
     line-height: 40px;
     color: rgba(0, 0, 0, 0.6);
+    font-weight: 600; 
 }
-.family img{
+
+.family img {
     width: 20px;
     height: 20px;
+    vertical-align: -3px;
 }
+
 /* main */
-.main{
+.main {
     position: relative;
     display: block;
 }
-.visual{
+
+.visual {
     position: relative;
     display: block;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0px auto;
+    position: relative;
 }
-.visual .container{
-    height: 1120px;
-}
-.video-container{
+
+video {
     position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+}
+
+
+
+.video {
+    /* position: absolute;
     top: 50%;
     left: 50%;
-    width: 100%;
+    width: 100vw;
     height: 1100px;
     opacity: 1;
     transform: translateX(-50%) translateY(-50%);
-    background-size: cover;
+    background-size: cover; */
 }
-.video-txt{
+
+.visual .container {
+    height: 1120px;
+}
+
+.video-txt {
     position: absolute;
     display: block;
     bottom: 40px;
@@ -201,23 +326,27 @@ body {
     color: black;
     margin-bottom: 20px;
 }
-.video-cate{
-    position:absolute;
+
+.video-cate {
+    position: absolute;
     display: block;
     bottom: 20px;
     font-size: 20px;
     color: #000;
 }
-.news{
+
+.news {
     position: relative;
     display: block;
     color: #fff;
 }
-.news .container{
+
+.news .container {
     height: 607px;
     white-space: nowrap;
 }
-.news-box{
+
+.news-box {
     position: relative;
     display: inline-block;
     width: 300px;
@@ -225,18 +354,37 @@ body {
     margin-top: 23px;
     margin-left: 45px;
 }
-.news-box>img{
+
+.news-box-img {
     position: relative;
     display: block;
     width: 100%;
-    height: 150px;
-    transition: background-color 0.3s;
-    
+    height: 172px;
+    overflow: hidden;
 }
-.news-box>img:hover{
-    background-color: rgba(0, 0, 0, 0.6);
+
+.news-box-img::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    z-index: 9;
+    opacity: 0;
+    transition: opacity 0.5s;
 }
-.news-txt{
+
+
+.news-box-img:hover::before {
+    opacity: 0.2;
+}
+
+.news-box-img > img {
+    width: 100%;
+}
+
+
+.news-txt {
     position: relative;
     display: block;
     color: #555;
@@ -246,7 +394,8 @@ body {
     line-height: 1.2em;
     margin-top: 34px;
 }
-.news-more{
+
+.news-more {
     position: relative;
     display: block;
     width: 135px;
@@ -255,37 +404,43 @@ body {
     color: #000;
     cursor: pointer;
 }
-.news-more >i{
+
+.news-more>i {
     position: relative;
     display: inline-block;
     margin-left: 20px;
 }
-.news-more >i::before{
+
+.news-more>i::before {
     content: '';
     position: relative;
     display: block;
     width: 10px;
     height: 10px;
 }
-.tour{
+
+.tour {
     position: relative;
     display: block;
     background-color: #222222;
 }
-.tour .container{
+
+.tour .container {
     height: 907px;
     background: url('../images/tourBG2.png') no-repeat;
     background-position: 85% 113% !important;
     background-size: 140%;
-    
+
 }
-.tour-txt{
+
+.tour-txt {
     position: relative;
     display: block;
     padding-top: 245px;
     margin-left: 30px;
 }
-.tour-txt>h3{
+
+.tour-txt>h3 {
     position: relative;
     display: block;
     color: #fff;
@@ -293,7 +448,8 @@ body {
     line-height: 1.2;
     font-size: 21px;
 }
-.tour-txt h2{
+
+.tour-txt h2 {
     position: relative;
     display: block;
     color: #fff;
@@ -302,28 +458,27 @@ body {
     line-height: 1.2;
     margin-top: 35px;
 }
-.tour i{
+
+.tour i {
     position: relative;
     display: inline-block;
     width: 25px;
     height: 10px;
     font-size: 20px;
 }
-.tour-txt span{
+
+.tour-txt span {
     position: relative;
     display: block;
     color: #e38f59;
     font-size: 18px;
     margin-top: 40px;
 }
-.tour-txt p{
+
+.tour-txt p {
     position: relative;
     display: block;
     font-size: 15px;
     color: rgba(255, 255, 255, 0.6);
     line-height: 1.75rem;
 }
-
-
-
-

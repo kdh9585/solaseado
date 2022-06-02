@@ -26,4 +26,18 @@ window.onload = function (){
             $(this).find('.submenu').stop().slideUp(300);
         });        
     });
+
+    let info = $('.info');
+    let infoSubmenu = $('.info-submenu')
+    info.mouseenter(function(){
+        header.addClass('header-active');
+        infoSubmenu.show();
+    });
+    // 4. gnb 에 마우스 아웃을 하면 .header 가 줄어든다.
+    info.mouseleave(function(){
+        header.removeClass('header-active');
+        infoSubmenu.hide();
+    });
+
+   
 }
