@@ -319,20 +319,20 @@ video {
 }
 
 .video-txt {
-    position: absolute;
+    position: relative;
     display: block;
-    bottom: 40px;
     font-size: 40px;
-    color: black;
-    margin-bottom: 20px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #181b31;
+    margin-top: 20px;
 }
 
 .video-cate {
-    position: absolute;
+    position: relative;
     display: block;
-    bottom: 20px;
     font-size: 20px;
-    color: #000;
+    color: #181b31;
 }
 
 .news {
@@ -409,6 +409,7 @@ video {
     position: relative;
     display: inline-block;
     margin-left: 20px;
+    font-size: 10px;
 }
 
 .news-more>i::before {
@@ -417,6 +418,7 @@ video {
     display: block;
     width: 10px;
     height: 10px;
+    font-size: 10px;
 }
 
 .tour {
@@ -482,3 +484,66 @@ video {
     color: rgba(255, 255, 255, 0.6);
     line-height: 1.75rem;
 }
+
+.footer{
+    position: relative;
+    display: block;
+    background-color: #202020;
+    font-size: 14px;
+}
+.container{
+    position: relative;
+    display: block;
+    height: 333px;
+}
+.footer-logo{
+    position: absolute;
+    left: 0%;
+    top: 70px;
+}
+.foooter-cate{
+    position: absolute;
+    display: block;
+    left: 385px;
+    top: 70px;
+}
+.address{
+    position: relative;
+    display: block;
+    color: rgba(255, 255, 255, 0.7);
+}
+.address-p{
+    position: relative;
+    display: block;
+    line-height: 25px;
+}
+.address-p > span{
+    position: relative;
+    margin-right: 20px;
+}
+.tell{
+    margin-top: 20px;
+    position: relative;
+    display: inline-block;
+    
+}
+.tell-txt{
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+}
+.tell-number{
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+    padding-right: 10px;
+}
+.tell-number::after{
+    content: '';
+    position: relative;
+    display: inline-block;
+    width: 1px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
